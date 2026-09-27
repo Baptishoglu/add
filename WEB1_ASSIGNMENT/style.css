@@ -1,0 +1,266 @@
+* {
+  font-size: 1.1em;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+/* I divide the header part to 3 columns.*/
+header {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  padding: 20px;
+}
+/* Placed the intro class in the first grid and aligns the text to the left.*/
+.intro {
+  grid-column: 1;
+  text-align: left;
+}
+/* Placed the img in the middle column. Centered it and made it round(ish) :) */
+header img {
+  grid-column: 2;
+  justify-self: center;
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+}
+/* Create some space at the bottom*/
+.intro h1 {
+  margin-bottom: 15px;
+}
+
+.nav-right img {
+  width: 30px;
+  height: 30px;
+  margin: 10px;
+}
+/* I placed them two ends and made the navbar sticky. So its going to stay on the screen even when we scrool all the way down.*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  background-color: rgb(0, 255, 255);
+  align-items: center;
+  height: 100%;
+  font-weight: bold;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+/* Added some hover effect here. When we hover on them, the background color is gonna change but not immediately*/
+.nav-left a {
+  display: inline-block;
+  box-sizing: border-box;
+  padding: 8px;
+  color: crimson;
+  text-decoration: none;
+  transform-origin: center;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.nav-left a:hover {
+  background-color: rgb(247, 245, 243);
+  transform: scale(1.1); /*Enlarges the element by 10%.*/
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 40px;
+}
+
+#about p {
+  text-align: left;
+  margin: 20px;
+}
+
+footer {
+  font-size: 10px;
+  text-align: center;
+}
+
+/* CV.html*/
+/* Added a bottom-line for the chapters*/ 
+.CV-section > section {
+  margin: 20px;
+  padding: 20px;
+  border-bottom: 1px solid #ccc;
+  color: rgb(5, 5, 5);
+}
+/* But not for the last one*/
+.CV-section > section:last-child {
+  border-bottom: none;
+}
+/* Fonts are bigger now.*/
+.CV-section h2 {
+  font-size: 150%;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+  text-align: center;
+  background: linear-gradient(to top, #f47b3f, #a20f0f);
+}
+.CV-section ul {
+  font-size: 80%;
+  margin-bottom: 10px;
+  line-height: 1.5;/* help to read easily*/
+  padding-left: 30px;
+}
+/* divided it 3 columns and remove the bullet points*/
+#contact-info{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: flex-start;
+  list-style-type: none;
+}
+
+#contact-info li  a{
+  text-decoration: none;
+  color: rgb(8, 8, 8);
+}
+
+
+
+/* Portfolio page styles
+---This part is the first try and didnt satisfied. But I wanna keep it here because I am going to play with it later.---
+.portfolio-section {
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 10px;
+} 
+
+.portfolio-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  padding: 10px;
+  margin: 10px;
+}
+
+.portfolio-section h2 {
+  font-size: 18px;
+}
+
+.portfolio-section p {
+  font-size: 15px;
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+  border: 1px solid #ccc;
+  box-shadow: 0 5px 5px 2px rgba(0, 0, 0, 0.5);
+  border-radius: 14px;
+  padding-bottom: 90px;
+}
+
+.cards span, .cards h2, .cards p {
+  text-align: center;
+  padding: 10px;
+}
+
+
+@media screen and (max-width: 1024px) {
+  .portfolio-section {
+    grid-template-columns: 1fr 1fr;
+  }  
+}
+
+@media screen and (max-width:768px) {
+  .portfolio-section {
+    grid-template-columns: 1fr;
+}
+  
+}*/
+
+/* Portfolio page */
+
+.portfolio-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+.portfolio-section h2 {
+  font-size: 18px;
+}
+
+.portfolio-section p {
+  font-size: 15px;
+}
+
+.cards {
+  height: 280px;
+  min-width: 0;
+  perspective: 1000px;
+}
+
+.card-inner {
+  display: grid;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease;
+}
+
+.cards:hover .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  grid-area: 1 / 1;/* Put them at the exact same spot*/
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 14px;
+  background-color: white;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  backface-visibility: hidden;
+}
+
+.card-front h2,
+.card-front p {
+  text-align: center;
+}
+
+.card-back {/*Flip the card first. Then flip it with hover again.*/
+  transform: rotateY(180deg);
+}
+
+.card-back a {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-back img {
+  max-width: 80%;
+  max-height: 80%;
+  object-fit: contain;
+}
+
+/* 2 columns */
+@media screen and (max-width: 1024px) {
+  .portfolio-section {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* 1 column */
+@media screen and (max-width: 768px) {
+  .portfolio-section {
+    grid-template-columns: 1fr;
+  }
+}
