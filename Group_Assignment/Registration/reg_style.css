@@ -1,0 +1,274 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #eeeff3ce;
+    color: #222b40;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.container {
+    width: 90%;
+    max-width: 1150px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 35% 65%;
+    background: white;
+    box-shadow: 0 5px 20px #d3d6e0;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* left side */
+
+.left {
+    display: flex;
+    flex-direction: column;
+    background: #596bd1;
+    color: white;
+    padding: 40px 30px;
+}
+
+.logo {
+    width: 100px;
+    height: 50px;
+    border: 2px solid white;
+    border-radius: 10px;
+    text-align: center;
+    line-height: 46px;
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 35px;
+}
+
+.left h1 {
+    font-size: 32px;
+    line-height: 1.3;
+}
+
+.left img {
+    width: 100%;
+    margin-top: 30px;
+    border-radius: 50px;
+}
+
+.left h3 {
+    display: block;
+    margin-top: 25px;
+    color: #e8dada;
+}
+
+.left span {
+    color: #ffffff;
+    width: 100%;
+    font-size: 32px;   
+}
+
+.left footer {
+    margin-top: auto;
+}
+
+
+/* right side */
+
+.right {
+    padding: 2rem;
+}
+
+.right h2 {
+    font-size: 1.8rem;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.right > p {
+    color: #777;
+}
+
+fieldset {
+    border: none;
+    padding: 0;
+    margin: 25px 0;
+}
+
+legend {
+    font-size: 18px;
+    font-weight: bold;
+    border-bottom: 1px solid #ddd;
+    width: 100%;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+
+}
+
+label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.phone-section {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.phone-input {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.phone-input select {
+    flex: 1;
+    width: 0;
+}
+.phone-input input {
+    flex: 8;
+    width: 0;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="password"],
+input[type="date"],
+input[type="file"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccd1dd;
+    border-radius: 6px;
+    background: white;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 2px solid #c5ccff;
+    border-color: #596bd1;
+}
+
+input:focus-visible,
+button:focus-visible
+textarea:focus-visible
+select:focus-visible {
+  outline: 3px solid #173ea5;
+  outline-offset: 3px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+small {
+    display: block;
+    color: #161616;
+    font-size: 12px;
+    margin-top: 5px;
+}
+
+/* range */
+
+.range {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.range input {
+    width: 100%;
+}   
+
+.range span {
+    color: #0a0a0a;
+}
+/* radio and checkbox */
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #596bd1;
+}
+
+.right label:has(input[type="radio"]),
+.right label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: normal;
+    margin: 12px 0;
+}
+
+.right label input[type="radio"],
+.right label input[type="checkbox"] {
+    width: 17px;
+    height: 17px;
+    margin: 0;
+}
+
+/* button */
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #596bd1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+button:hover {
+    background: #4053b8;
+}
+
+/* phone screen */
+
+@media (max-width: 800px) {
+    .container {
+        grid-template-columns: 1fr;
+        width: 95%;
+        margin: 15px auto;
+    }
+
+    .left {
+        padding: 25px;
+    }
+
+    .left h1 {
+        font-size: 30px;
+    }
+
+    .right {
+        padding: 25px;
+    }
+
+    .right h2 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 400px) {
+    .left,
+    .right {
+        padding: 18px;
+    }
+
+    .left h1 {
+        font-size: 26px;
+    }
+}
